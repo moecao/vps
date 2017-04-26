@@ -219,7 +219,8 @@ php_phpmyadmin() {
 	FILE_NAME=$(echo "$DL"|sed -E 's|.*/||')
 	curl "$DL" >$FILE_NAME
 	[ -f "$FILE_NAME" ] && {
-		tar -xf $FILE_NAME && mv $(ls -al|grep -Ei '^d.*phpmyadmin'|head -n1|awk '{print $9}') /www
+		rm -rf /www/phpmyadmin
+		tar -xf $FILE_NAME -C /www && mv /www/$(ls -al|grep -Ei '^d.*phpmyadmin'|head -n1|awk '{print $9}') /www/phpmyadmin
 		rm -f $FILE_NAME
 	}
 }
