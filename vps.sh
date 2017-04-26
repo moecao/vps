@@ -1076,6 +1076,7 @@ vps_backup_mongodb(){
 		# mongodump --host mongodb1.example.net --port 3017 --username user --password pass --out /opt/backup/mongodump-2013-10-24
 		mongodump -h 127.0.0.1 -o dbdirectory -o ./mongodb && tar -zcf mongodb-${BACKUP_TIME}.tar.gz -C ./mongodb . && rm -rf ./mongodb
 	}
+	# mongorestore -h <hostname><:port> -d dbname [ <path> | --dir <dir_path> ]
 }
 
 vps_backup_redis(){
