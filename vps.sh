@@ -990,7 +990,7 @@ vps_init() {
 	echo "===================================================="
 	echo "Global"
 	echo "- Root Passowrd:   $USER_PWD"
-	echo "- SSH Port:        &SSH_PORT"
+	echo "- SSH Port:        $SSH_PORT"
 	echo ""
 	[ "$LNMP" = '1' ] && {
 	echo "LNMP"
